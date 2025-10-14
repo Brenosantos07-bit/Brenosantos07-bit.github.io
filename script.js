@@ -58,3 +58,54 @@ if (document.querySelector('.slider-container')) {
 
 
 
+
+// =============================================
+// ===== LÓGICA DO FORMULÁRIO DE CONTATO =====
+// =============================================
+
+// Verifica se o formulário de contato existe na página atual
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    // 1. Selecionar os elementos do formulário
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const messageContainer = document.getElementById('form-message');
+
+    // 2. Adicionar o evento de 'submit' ao formulário
+    contactForm.addEventListener('submit', function(event) {
+        // Prevenir o comportamento padrão de recarregar a página
+        event.preventDefault();
+
+        // 3. Pegar os valores dos campos e remover espaços em branco
+        const emailValue = emailInput.value.trim();
+        const messageValue = messageInput.value.trim();
+
+        // 4. Validar os campos
+        if (emailValue === '' || messageValue === '') {
+            // Se algum campo obrigatório estiver vazio, mostra erro
+            showMessage('Por favor, preencha os campos de Email e Mensagem.', 'error');
+        } else {
+            // Se tudo estiver correto, mostra sucesso
+            showMessage('Comentário enviado com sucesso!', 'success');
+            
+            // Limpa o formulário após o envio
+            contactForm.reset();
+        }
+    });
+
+    // 5. Função para exibir as mensagens na tela
+    function showMessage(message, type) {
+        messageContainer.innerHTML = message;
+        messageContainer.className = 'form-message'; // Reseta as classes
+        messageContainer.classList.add(type); // Adiciona 'success' ou 'error'
+
+        // Opcional: faz a mensagem de sucesso desaparecer após 5 segundos
+        if (type === 'success') {
+            setTimeout(() => {
+                messageContainer.innerHTML = '';
+                messageContainer.className = 'form-message';
+            }, 5000); // 5000 milissegundos = 5 segundos
+        }
+    }
+}
