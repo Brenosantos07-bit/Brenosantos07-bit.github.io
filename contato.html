@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Breno Portfólio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="page-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">SOBRE MIM</a></li>
+                    <li><a href="projetos.html">PROJETOS</a></li>
+                    <li><a href="habilidades.html">HABILIDADES</a></li>
+                    <li><a href="contato.html" class="active">CONTATO</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="contact-content-centered">
+            <a href="index.html" class="back-button">
+                <i class="fa-solid fa-chevron-left"></i> Voltar
+            </a>
+
+            <h1 class="page-title">CONTATO</h1>
+            
+            <div class="contact-form-wrapper">
+                <div id="form-message" class="form-message"></div>
+
+                <form id="contact-form" novalidate>
+                    <div class="form-group floating-label">
+                        <input type="text" id="name" name="name" placeholder=" ">
+                        <label for="name">Nome</label>
+                    </div>
+                    <div class="form-group floating-label">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email">Email *</label>
+                    </div>
+                    <div class="form-group floating-label">
+                        <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                        <label for="message">Mensagem *</label>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <footer class="page-footer">
+        <p>© 2025 Breno Santos Silva. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

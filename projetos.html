@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Breno Portfólio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="page-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">SOBRE MIM</a></li> 
+                    <li><a href="projetos.html" class="active">PROJETOS</a></li>
+                    <li><a href="habilidades.html">HABILIDADES</a></li>
+                    <li><a href="contato.html">CONTATO</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="projects-content">
+            <a href="index.html" class="back-button">
+                <i class="fa-solid fa-chevron-left"></i> Voltar
+            </a>
+
+            <h1 class="page-title">PROJETOS</h1>
+
+            <div class="slider-container">
+                <button class="slider-arrow" id="prev-button" aria-label="Projeto anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+            <div class="projects-viewport">
+                <div class="projects-wrapper">
+                    <a href="projeto-ong.html" class="project-card-link">
+                    <div  class="project-card">
+                        <h3><center>Site ONG</center></h3>
+                        <div class="project-image">
+                            <img src="/Imagens/projeto 1.png" alt="Preview do Projeto 1">
+                        </div>
+                        <p>Desenvolvimento fronte-end de um site de uma ONG para proteção de animais.</p>
+                    </div>
+                    </a>
+                    <a href="projeto-ajubus.html" class="project-card-link">
+                    <div class="project-card">
+                        <h3><center>App AjuBus</center></h3>
+                        <div class="project-image">
+                            <img src="/Imagens/projeto 2.png" alt="Preview do Projeto 2">
+                        </div>
+                        <p>Desenvolvimento de um aplicativo com rota de ônibus para a população de Aracaju</p>
+                    </div>
+                    </a>
+                    
+                    <a href="projeto-sefaz.html" class="project-card-link">
+                    <div class="project-card">
+                        <h3><center>Central de API</center></h3>
+                        <div class="project-image">
+                             <img src="/Imagens/projeto 3.png" alt="Preview do Projeto 3">
+                        </div>
+                        <p>Desenvolvimento de uma central de api para a empresa SEFAZ</p>
+                    </div>
+                    </a>
+
+                    <a href="projeto-portifolio.html" class="project-card-link">
+                    <div class="project-card">
+                        <h3><center>Meu Portfólio de Desenvolvedor</center></h3>
+                        <div class="project-image">
+                             <img src="/Imagens/portifolio projeto .png" alt="Preview do Projeto 4">
+                        </div>
+                        <p>Desenvolvimento de um portifolio em forma de site sobre você, para ser divulgado em plataformas. </p>
+                    </div>
+                    </a>
+                    </div>
+            </div>    
+                <button class="slider-arrow" id="next-button" aria-label="Próximo projeto">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
