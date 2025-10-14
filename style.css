@@ -703,3 +703,38 @@ form button[type="submit"]:hover {
         flex-direction: column; /* Colunas ficam uma em cima da outra */
     }
 }
+
+
+
+
+
+/* ============================================= */
+/* ===== ESTILOS DA PÁGINA DE OBRIGADO ===== */
+/* ============================================= */
+
+.thank-you-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.thank-you-icon {
+    font-size: 5rem;
+    color: #2ecc71; /* Verde de sucesso */
+    margin-bottom: 1.5rem;
+}
+
+.thank-you-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
