@@ -109,3 +109,18 @@ if (contactForm) {
         }
     }
 }
+
+
+
+// ==========================================================
+// ===== LIMPA O FORMULÁRIO QUANDO O USUÁRIO VOLTA NA PÁGINA =====
+// ==========================================================
+window.addEventListener('pageshow', function (event) {
+    // A propriedade 'persisted' é verdadeira se a página foi restaurada do cache (bfcache)
+    if (event.persisted) {
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.reset(); // Limpa todos os campos do formulário
+        }
+    }
+});
