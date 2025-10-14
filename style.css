@@ -509,10 +509,15 @@ body {
 #contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1,5rem;
 }
 
 /* Efeito de Label Flutuante */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 .form-group.floating-label {
     position: relative;
 }
@@ -568,6 +573,7 @@ form button[type="submit"] {
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 form button[type="submit"]:hover {
