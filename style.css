@@ -709,100 +709,117 @@ form button[type="submit"]:hover {
 
 
 /* ======================================================= */
-/* ===== REVISÃO GERAL RESPONSIVA PARA CELULARES ===== */
-/* Aplicado em telas com 768px de largura ou menos */
+/* ===== VERSÃO FINAL RESPONSIVA PARA CELULARES ===== */
 /* ======================================================= */
 
 @media (max-width: 768px) {
 
-    /* --- AJUSTES GLOBAIS --- */
-    /* Diminui o padding lateral das páginas internas */
-    .page-container {
-        padding: 2rem 1rem;
-        margin: 1rem auto; /* Diminui a margem em telas pequenas */
+    /* --- AJUSTES GLOBAIS PARA TELAS PEQUENAS --- */
+    body {
+        /* Garante que não haja scroll horizontal indesejado */
+        overflow-x: hidden;
     }
 
-    /* Diminui o tamanho dos títulos principais */
+    .page-container, .portfolio-container {
+        /* Remove altura fixa e ajusta margens/padding para telas estreitas */
+        height: auto;
+        max-height: none;
+        width: 100%;
+        margin: 0;
+        padding: 2rem 1rem; /* Menos padding lateral */
+        border-radius: 0; /* Remove bordas arredondadas em tela cheia */
+    }
+
     .page-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .main-nav ul {
+        gap: 0.8rem 1.5rem; /* Espaço vertical e horizontal */
+        flex-wrap: wrap; /* Permite que os links quebrem a linha */
+        justify-content: center;
     }
 
     /* --- PÁGINA INICIAL ("Sobre Mim") --- */
     .portfolio-container {
-        width: 95%; /* Garante que o container não grude nas bordas */
-        padding: 1rem;
+        flex-direction: column;
     }
 
-    .left-panel, .right-panel {
-        padding: 1.5rem; /* Reduz o padding interno */
+    .left-panel {
+        border-radius: 0;
+    }
+
+    .left-panel img {
+        max-width: 200px; /* Controla o tamanho da sua foto */
     }
 
     .about-me h1 {
-        font-size: 2.2rem; /* Diminui o tamanho do "Sobre mim" */
-    }
-    
-    .about-me p {
-        font-size: 0.95rem; /* Ajusta o tamanho do parágrafo */
+        font-size: 2rem;
+        text-align: center;
     }
 
-    .main-nav ul {
-        gap: 1rem; /* Diminui o espaço entre os links da navegação */
-        flex-wrap: wrap; /* Permite que os links quebrem a linha se não couberem */
+    .about-me p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .social-icons {
         justify-content: center;
     }
 
-    /* --- PÁGINA DE PROJETOS (A MAIS IMPORTANTE) --- */
-    /* Transforma o carrossel em um scroll nativo no celular */
+    /* --- PÁGINA DE PROJETOS (CORREÇÃO PRINCIPAL) --- */
     .projects-viewport {
-        overflow-x: auto; /* Permite scroll horizontal com o dedo */
-        scroll-snap-type: x mandatory; /* Ativa o "encaixe" no eixo X */
-        scrollbar-width: none; /* Esconde a barra de scroll no Firefox */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
     }
     .projects-viewport::-webkit-scrollbar {
-        display: none; /* Esconde a barra de scroll em outros navegadores */
+        display: none;
     }
 
-    /* Centraliza o primeiro card e garante que não fiquem cortados */
     .projects-wrapper {
-        padding: 0 5%; /* Adiciona um padding para o efeito de "espiada" */
+        /* O padding aqui cria o espaço para o primeiro e último card centralizarem */
+        padding: 0 20px;
     }
     
-    /* Ajusta o tamanho do card para caber na tela */
     .project-card-link {
-        width: 280px; /* Um tamanho fixo menor que a maioria das telas de celular */
-        scroll-snap-align: center; /* Cada card vai tentar se alinhar ao centro ao rolar */
+        /* A MÁGICA: O card agora tem uma largura relativa à tela! */
+        width: 85%;
+        max-width: 300px; /* Um limite para não ficar gigante em tablets */
+        flex-shrink: 0; /* Impede que o card encolha */
+        scroll-snap-align: center;
     }
 
-    /* Esconde as setas, pois o usuário vai usar o dedo para rolar */
     .slider-arrow {
-        display: none;
+        display: none; /* Esconde as setas, pois o scroll é com o dedo */
     }
 
     /* --- PÁGINA DE HABILIDADES --- */
     .skill-bars-container {
-        gap: 1.5rem; /* Diminui o espaço entre as barras */
-        flex-wrap: wrap; /* Permite que as barras quebrem a linha */
+        gap: 1.5rem;
+        flex-wrap: wrap;
         justify-content: center;
+        padding: 0 1rem;
     }
 
     .bar-background {
-        height: 220px; /* Diminui a altura das barras */
-        width: 35px;
+        height: 200px;
+        width: 30px;
+    }
+    
+    .skill-bar-item p {
+        font-size: 0.9rem;
     }
 
     /* --- PÁGINA DE DETALHE DE PROJETO --- */
     .project-detail-layout {
-        flex-direction: column; /* Coloca imagem e texto um sobre o outro */
-        gap: 2rem;
-    }
-    
-    .project-info h2 {
-        margin-top: 0; /* Remove a margem extra quando está em coluna */
-    }
-    
-    /* --- PÁGINA DE CONTATO --- */
-    .contact-form-wrapper {
-        padding: 0 0.5rem;
+        flex-direction: column;
     }
 
+    /* --- PÁGINA DE CONTATO --- */
+    .contact-form-wrapper {
+        width: 100%;
+        padding: 0;
+    }
 }
